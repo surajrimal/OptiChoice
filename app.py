@@ -17,9 +17,11 @@ def result():
     context = request.form.get('context')
 
     # Debugging: print the received data
-    logging.info("Received options:", options)
+    logging.info("Received options:")
+    logging.info(options)
 
-    logging.info("Received descriptions:", descriptions)
+    logging.info("Received descriptions:")
+    logging.info(descriptions)
     logging.info(context)
 
     # Check for duplicate options
