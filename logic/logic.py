@@ -30,7 +30,7 @@ def process_options(options, descriptions, context):
 def ai_logic(prompt):
     print(prompt)
         
-    url = "http://localhost:10000/v1/chat/completions"
+    url = "http://0.0.0.0:10000/v1/chat/completions"
     body = {
         #"model": "gpt-3.5-turbo-16k",
         "model": "gpt-4",
