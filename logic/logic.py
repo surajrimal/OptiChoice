@@ -1,5 +1,5 @@
 import requests
-
+import logging
 
 def process_options(options, descriptions, context):
     """
@@ -28,7 +28,8 @@ def process_options(options, descriptions, context):
     # You can perform further processing here as needed
 
 def ai_logic(prompt):
-    print(prompt)
+    logging.info(prompt)
+
         
     url = "http://0.0.0.0:10000/v1/chat/completions"
     body = {

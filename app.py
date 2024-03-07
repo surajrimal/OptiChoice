@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from logic.logic import process_options
+import logging
+logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
 app = Flask(__name__)
 
@@ -15,9 +17,10 @@ def result():
     context = request.form.get('context')
 
     # Debugging: print the received data
-    print("Received options:", options)
-    print("Received descriptions:", descriptions)
-    print(context)
+    logging.info("Received options:", options)
+
+    logging.info("Received descriptions:", descriptions)
+    logging.info(context)
 
     # Check for duplicate options
     if len(set(options)) != len(options):
