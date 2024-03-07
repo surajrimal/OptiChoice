@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Selector</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">OptiChoice - Your Personalized Decision-Making Companion</h1>
+        <p class="text-center">Power of advanced AI technology to provide personalized recommendations tailored specifically to your needs and preferences. Say goodbye to decision paralysis and hello to confident choices with OptiChoice by your side.</p>
+        <form id="option-form">
+            <div id="options-container" class="options">
+                
+                <div class="option form-group">
+                    <label for="context">Option 1</label>
+                    <div class="input-group">
+                        <input type="text" name="option" class="form-control" placeholder="Enter option 1" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary toggle-description" type="button" data-toggle="collapse" data-target="#description1" aria-expanded="false" aria-controls="description1">Add description</button>
+                        </div>
+                    </div>
+                    <div class="collapse mt-2" id="description1">
+                        <textarea name="description" class="form-control description" placeholder="Description for option 1" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="option form-group">
+                    <label for="context">Option 2</label>
+                    <div class="input-group">
+                        <input type="text" name="option" class="form-control" placeholder="Enter option 2" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary toggle-description" type="button" data-toggle="collapse" data-target="#description2" aria-expanded="false" aria-controls="description2">Add description</button>
+                        </div>
+                    </div>
+                    <div class="collapse mt-2" id="description2">
+                        <textarea name="description" class="form-control description" placeholder="Description for option 2" rows="4"></textarea>
+                    </div>
+                </div>
+
+               
+                <div class="context form-group">
+                    <label for="context">Context:</label>
+                    <input type="text" id="context" name="context" class="form-control" placeholder="Enter context">
+                </div>
+            </div>
+            <button type="button" id="add-option" class="btn btn-primary">Add Option</button>
+            <button type="submit" class="btn btn-success">Find Best Option</button>
+            <button type="button" id="reset-form" class="btn btn-danger">Reset</button>
+        </form>
+        <div id="loading-spinner" class="spinner-border text-primary" role="status" style="display: none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div id="result-container" class="result"></div>
+    </div>
+    
+    <!-- Bootstrap JS and jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
