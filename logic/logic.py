@@ -16,9 +16,9 @@ def process_options(options, descriptions, context):
     # Construct prompt based on whether descriptions are present
     if description_statements:
         descriptions_statement = ". ".join(description_statements)
-        prompt = f"What is the best option among these options: {options_statement}. {descriptions_statement}. Please answer exactly one among {options_statement}. Provide shortest answer as possible"
+        prompt = f"What is the best option among these options: {options_statement}. {descriptions_statement}. Please answer exactly one among {options_statement}. Provide shortest answer as possible. After that in next paragraph also provide one line logic behind this answer."
     else:
-        prompt = f"What is the best option among these options: {options_statement}. Please answer exactly one among {options_statement}. Provide shortest answer as possible."
+        prompt = f"What is the best option among these options: {options_statement}. Please answer exactly one among {options_statement}. Provide shortest answer as possible. After that in next paragraph also provide one line logic behind this answer."
     if context:
         prompt = prompt + " The context is "+ context
     return ai_logic(prompt)
