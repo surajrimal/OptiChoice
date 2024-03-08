@@ -77,7 +77,28 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide loading spinner
             loadingSpinner.style.display = 'none';
 
-            resultContainer.innerHTML = data;
+            const dataSegments = data.split('\n');
+
+            // Clear previous content in result container
+            resultContainer.innerHTML = '';
+
+            // Loop through dataSegments and create <p> elements for each segment
+            dataSegments.forEach((segment,index) => {
+                segment = segment.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                // Create a paragraph element
+                const paragraph = document.createElement('p');
+                
+                if (index === 0) {
+                    paragraph.innerHTML = `<strong><em>${segment}</em></strong>`;
+                } else {
+                    // Otherwise, set the inner HTML normally
+                    paragraph.innerHTML = segment;
+                }
+                
+                // Append the paragraph to the result container
+                resultContainer.appendChild(paragraph);
+            });
         })
         .catch(error => {
             // Hide loading spinner and display error message
