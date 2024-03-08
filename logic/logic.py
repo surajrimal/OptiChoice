@@ -33,8 +33,8 @@ def ai_logic(prompt):
         
     url = "http://0.0.0.0:10000/v1/chat/completions"
     body = {
-        #"model": "gpt-3.5-turbo-16k",
-        "model": "gpt-4",
+        "model": "gpt-3.5-turbo-16k",
+        #"model": "gpt-4",
         "stream": False,
         "messages": [
             {"role": "assistant", "content": prompt}
