@@ -43,5 +43,5 @@ def ai_logic(prompt):
     json_response = requests.post(url, json=body).json().get('choices', [])
 
     for choice in json_response:
-        print(choice)
+        logging.info(choice)
         return choice.get('message', {}).get('content', '')
