@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Discover the latest advancements and trends in artificial intelligence (AI) on our platform. Stay informed with real-time updates, insightful analyses, and exclusive interviews, all curated to keep you at the forefront of innovation.">
+    <title>Recommend The Best</title>
+    <link href="{{ url_for('static', filename='/favicon.ico') }}" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+{% block navbar %}
+    <div class="container-fluid nav-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Recommend The Best</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
+                <p class="navbar-text">Power of advanced AI technology to provide personalized recommendations tailored specifically to your needs and preferences.</p>
+            </div>
+        </nav>
+    </div>
+{% endblock %}
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+    {% block footer %}
+    <div class="container-fluid footer">
+        <p class="text-center footer-text">© Option Recommender By CCI | <a href="{{ url_for('terms_of_service') }}">Terms of Service</a> | <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></p>
+    </div>
+    {% endblock %}
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

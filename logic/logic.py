@@ -40,8 +40,10 @@ def ai_logic(prompt):
             {"role": "assistant", "content": prompt}
         ]
     }
-    json_response = requests.post(url, json=body).json().get('choices', [])
-
+    try:
+        json_response = requests.post(url, json=body).json().get('choices', [])
+    except:
+        json_response = {'index': 0, 'message': {'role': 'assistant', 'content': 'Inter Server Error!\n\nThe ***Best Option Recommender*** has faced an issue! Please try again later.'}, 'finish_reason': 'stop'}
     for choice in json_response:
         logging.info(choice)
         return choice.get('message', {}).get('content', '')
